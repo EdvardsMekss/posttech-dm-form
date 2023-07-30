@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Your custom script -->
+  <script type="text/javascript">
+    function setDefault() {
+        let spanElement = document.querySelector(".logout_intro.customStyle");
+        let textContent = spanElement.textContent.trim();
+        
+        // Remove the first and last double quotes from the text content
+        let trimmedTextContent = textContent.slice(1);
+        
+        // Split the trimmed text content by spaces
+        let nameParts = trimmedTextContent.split(" ");
+        
+        // Extract the values for vards and uzvards
+        let vards = nameParts[1] || ""; // Use empty string if vards is undefined or null
+        let uzvards = nameParts[2] || ""; // Use empty string if uzvards is undefined or null
+        
+        // Validate the extracted values before updating the form fields
+        if (vards.trim() !== "" || uzvards.trim() !== "") {
+        document.getElementById("first_25").value = vards;
+        document.getElementById("last_25").value = uzvards;
+        } else {
+            console.log("Invalid name and or username values!")
+            return;
+        }
+    }
+    
+    setDefault();
+  </script>
+
+<script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.43812" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.43812" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/vendor/imageinfo.js?v=3.3.43812" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/file-uploader/fileuploader.js?v=3.3.43812"></script>
+<script src="https://cdn03.jotfor.ms/js/payments/validategateways.js?v=3.3.43812" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/s/umd/3f2a5c85eb6/for-widgets-server.js?v=3.3.43812" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+    JotForm.extendsNewTheme = false;
+    JotForm.singleProduct = false;
+    JotForm.newPaymentUIForNewCreatedForms = true;
+    JotForm.newPaymentUI = true;
+    JotForm.clearFieldOnHide="disable";
+    JotForm.submitError="jumpToFirstError";
+
+    JotForm.init(function(){
+    /*INIT-START*/
+if (window.JotForm && JotForm.accessible) $('input_16').setAttribute('tabindex',0);
+      JotForm.alterTexts({"ageVerificationError":"Lai iesniegtu šo veidlapu, jums ir jābūt vecākam par {minAge} gadiem.","alphabetic":"Šajā laukā var būt tikai burti","alphanumeric":"Šajā laukā var būt tikai burti un cipari.","appointmentSelected":"Jūs atlasījāt {time} šādā datumā: {date}","ccDonationMinLimitError":"Minimālā summa ir {minAmount} {currency}","ccInvalidCVC":"CVC numurs nav derīgs.","ccInvalidExpireDate":"Derīguma termiņš nav derīgs.","ccInvalidExpireMonth":"Expiration month is invalid.","ccInvalidExpireYear":"Expiration year is invalid.","ccInvalidNumber":"Kredītkartes numurs nav derīgs.","ccMissingDetails":"Lūdzu, aizpildiet kredītkartes datus.","ccMissingDonation":"Lūdzu, ievadiet ziedojuma summas skaitliskās vērtības.","ccMissingProduct":"Lūdzu, atlasiet vismaz vienu produktu.","characterLimitError":"Pārāk daudz rakstzīmju. Robeža ir","characterMinLimitError":"Pārāk maz rakstzīmju. Minimums ir","chooseAFile_infoMessage":"Izvēlieties failu","confirmClearForm":"Vai tiešām vēlaties notīrīt veidlapu?","confirmEmail":"E-pasts neatbilst","currency":"Šajā laukā var būt tikai valūtas vērtības.","cyrillic":"Šajā laukā var būt tikai kirilicas rakstzīmes","dateInvalid":"Šis datums nav derīgs. Datuma formāts ir {format}","dateInvalidSeparate":"Šis datums nav derīgs. Ievadiet derīgu {element}.","dateLimited":"Šis datums nav pieejams.","disallowDecimals":"Lūdzu, ievadiet veselu skaitli.","doneButton":"Done","doneMessage":"Labs darbs! Visas kļūdas ir novērstas.","dragAndDropFilesHere_infoMessage":"Velciet un nometiet failus šeit","email":"Ievadiet derīgu epasta adresi","error":"Kļūda","fieldError":"laukā ir kļūda.","fillMask":"Lauka vērtībai jāaizpilda maska.","freeEmailError":"Bezmaksas e-pasta konti nav atļauti","generalError":"Veidlapā ir kļūdas. Pirms turpināt, lūdzu, izlabojiet tās.","generalPageError":"Šajā lapā ir kļūdas. Pirms turpināt, lūdzu, izlabojiet tās.","geoNotAvailableDesc":"Location provider not available. Please enter the address manually.","geoNotAvailableTitle":"Position Unavailable","geoPermissionDesc":"Check your browser's privacy settings.","geoPermissionTitle":"Permission Denied","geoTimeoutDesc":"Please check your internet connection and try again.","geoTimeoutTitle":"Timeout","gradingScoreError":"Kopējam rezultātam jābūt mazākam vai vienādam ar","incompleteFields":"Ir nepilnīgi obligātie lauki. Lūdzu, aizpildiet tos.","inputCarretErrorA":"Ievades vērtība nedrīkst būt mazāka par minimālo vērtību:","inputCarretErrorB":"Ievade nedrīkst būt lielāka par maksimālo vērtību:","justSoldOut":"Tikko Izpārdots","lessThan":"Jūsu rezultātam jābūt mazākam par vai vienādam ar","maxDigitsError":"Maksimālais atļautais cipari ir","maxFileSize_infoMessage":"Maks. faila lielums","maxSelectionsError":"Maksimālais atļautais atlases skaits ir","minCharactersError":"Rakstzīmju skaits nedrīkst būt mazāks par minimālo vērtību:","minSelectionsError":"Minimālais nepieciešamais atlases skaits ir","multipleError":"Šajā lapā ir {count} kļūdas. Lūdzu, izlabojiet tās pirms turpināt.","multipleFileUploads_emptyError":"{file} ir tukšs, lūdzu, vēlreiz atlasiet failus bez tā.","multipleFileUploads_fileLimitError":"Atļauta tikai {fileLimit} failu augšupielāde.","multipleFileUploads_minSizeError":"{file} ir pārāk mazs, minimālais faila lielums ir {minSizeLimit}.","multipleFileUploads_onLeave":"Faili tiek augšupielādēti. Ja jūs pametīsit vietni, augšupielāde tiks atcelta.","multipleFileUploads_sizeError":"{file} ir pārāk liels, maksimālais faila lielums ir {sizeLimit}.","multipleFileUploads_typeError":"{file} ir nederīgs paplašinājums. Ir atļauti tikai {extensions}.","multipleFileUploads_uploadFailed":"File upload failed, please remove it and upload the file again.","nextButtonText":"Next","noSlotsAvailable":"Nav pieejami sloti","notEnoughStock":"Pašreizējai atlasei nepietiek krājumu","notEnoughStock_remainedItems":"Pašreizējai atlasei nepietiek krājumu (atlikuši {count} vienumi)","noUploadExtensions":"File has no extension file type (e.g. .txt, .png, .jpeg)","numeric":"Šajā laukā var būt tikai skaitliskas vērtības","oneError":"Šajā lapā ir {count} kļūda. Pirms turpināt, lūdzu, izlabojiet to.","pastDatesDisallowed":"Datums nedrīkst būt pagātnē.","pleaseWait":"Lūdzu uzgaidiet...","prevButtonText":"Previous","progressMiddleText":"no","required":"Šis lauks ir obligāts.","requiredLegend":"Visi ar * atzīmētie lauki ir obligāti un jāaizpilda.","requireEveryCell":"Katra šūna ir nepieciešama.","requireEveryRow":"Katra rinda ir obligāta.","requireOne":"Nepieciešams vismaz viens lauks.","restrictedDomain":"This domain is not allowed","reviewBackText":"Atpakaļ uz veidlapu","reviewSubmitText":"Pārskatiet un iesniedziet","seeAllText":"Parādīt visu","seeErrorsButton":"See Errors","selectionSoldOut":"Izlase Izpārdots","slotUnavailable":"{time} {date} ir aizņemts. Lūdzu, atlasiet citu laiku.","soldOut":"Izpārdots","startButtonText":"START","submissionLimit":"Atvainojiet! Ir atļauta tikai viena ieeja. &lt;br&gt; Šai veidlapai ir atspējoti vairāki iesniegumi.","submitButtonText":"Submit","subProductItemsLeft":"(atlikuši {count} vienumi)","uploadExtensions":"You can only upload following files:","uploadFilesize":"File size cannot be bigger than:","uploadFilesizemin":"File size cannot be smaller than:","url":"Šajā laukā var būt tikai derīgs URL","validateEmail":"Jums ir jāapstiprina šis e-pasts","wordLimitError":"Pārāk daudz vārdu. Robeža ir","wordMinLimitError":"Pārāk maz vārdu. Minimums ir"});
+      FormTranslation.init({"detectUserLanguage":"1","firstPageOnly":"0","options":"Latvian","originalLanguage":"lv","primaryLanguage":"lv","saveUserLanguage":"1","showStatus":"flag-with-nation","theme":"light-theme","version":"2"});
+      setTimeout(function() {
+          JotForm.initMultipleUploads();
+      }, 2);
+    /*INIT-END*/
+    });
+
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,null,null,null,{"description":"","name":"latvijasPasta","qid":"4","subLabel":"Vestulu korespondence (dokumenti) lidz 2 kg.","text":"Latvijas Pasta sutijumu veids","type":"control_dropdown"},{"description":"","name":"ludzuPievienojiet","qid":"5","subLabel":"Liela skaita failu pievienosana var izraisit Jusu datora \"uzkarsanos\". Ja tas notiek, ludzu uzgaidiet, kamer faili tiks apstradati un iesniegti. Lai izvairitos no datora parslogosanas, aicinam dokumentus iesniegt ZIP vai RAR arhiva veida.","text":"Ludzu, pievienojiet dokumentus (PDF, ZIP, RAR)","type":"control_fileupload"},null,null,{"name":"typeA","qid":"8","text":"ProgressBar","type":"control_widget"},{"description":"","name":"aploksnesVeids","qid":"9","subLabel":"","text":"Aploksnes veids","type":"control_dropdown"},null,null,null,null,null,{"name":"typeA15","qid":"15","text":"Adreses, pazinojumu un svetku klisejas","type":"control_widget"},{"description":"","name":"papildusNoradijumi","qid":"16","subLabel":"","text":"Papildus noradijumi vai komentari operatoram:","type":"control_textarea"},null,null,{"name":"submit","qid":"19","text":"Nosutit pastu","type":"control_button"},null,null,null,null,{"description":"","name":"typeA24","qid":"24","text":"Dokumentu drukas krasa","type":"control_radio"},{"description":"","name":"iesniedzejs","qid":"25","text":"Iesniedzejs","type":"control_fullname"},{"name":"typeA26","qid":"26","text":"","type":"control_widget"}]);}, 20); 
+</script>
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.43812"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.43812" />
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.43812" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/donationBox.css?v=3.3.43812">
+  
+
+  <style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+
+/* Begining of advanced designer */
+/* 17 - INPUT WIDTHS */
+/*  20 - FORM PADDING */
+.form-section {
+  padding: 0px 38px;
+}
+/* Heights */
+/* 11 - LINE PADDING */
+/* LABEL STYLE */
+/* 12 - ROUNDED INPUTS */
+.form-checkbox-item label,
+.form-checkbox-item span,
+.form-radio-item label,
+.form-radio-item span {
+  color: #404a64;
+}
+.form-radio-item,
+.form-checkbox-item {
+  padding-bottom: 0px !important;
+}
+.form-radio-item:last-child,
+.form-checkbox-item:last-child {
+  padding-bottom: 0;
+}
+.form-single-column .form-checkbox-item,
+.form-single-column .form-radio-item {
+  width: 100%;
+}
+.form-checkbox-item .editor-container div,
+.form-radio-item .editor-container div {
+  position: relative;
+}
+.form-checkbox-item .editor-container div:before,
+.form-radio-item .editor-container div:before {
+  display: inline-block;
+  vertical-align: middle;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+.form-checkbox-item input,
+.form-radio-item input {
+  margin-top: 2px;
+}
+.form-checkbox:checked + label:before,
+.form-checkbox:checked + span:before {
+  background-color: #2e69ff;
+  border-color: #2e69ff;
+}
+.form-radio:checked + label:before,
+.form-radio:checked + span:before {
+  border-color: #2e69ff;
+}
+.form-radio:checked + label:after,
+.form-radio:checked + span:after {
+  background-color: #2e69ff;
+}
+.form-checkbox:hover + label:before,
+.form-checkbox:hover + span:before,
+.form-radio:hover + label:before,
+.form-radio:hover + span:before {
+  border-color: rgba(46, 105, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(46, 105, 255, 0.25);
+}
+.form-checkbox:focus + label:before,
+.form-checkbox:focus + span:before,
+.form-radio:focus + label:before,
+.form-radio:focus + span:before {
+  border-color: #2e69ff;
+  box-shadow: 0 0 0 3px rgba(46, 105, 255, 0.25);
+}
+.submit-button {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: inherit;
+}
+.submit-button {
+  min-width: 180px;
+}
+li[data-type="control_button"] .form-submit-button {
+  color: #ffffff;
+  background-color: #65cfea;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+li[data-type="control_button"] .form-submit-button:hover {
+  background-color: #1ca9cd;
+}
+li[data-type="control_button"] button.jf-form-buttons.form-sacl-button,
+li[data-type="control_button"] button.jf-form-buttons.form-submit-print {
+  color: #65cfea;
+  border-color: #65cfea;
+  background-image: none;
+  background-color: #fff;
+}
+li[data-type="control_button"] button.jf-form-buttons.form-sacl-button:hover,
+li[data-type="control_button"] button.jf-form-buttons.form-submit-print:hover {
+  background-color: #1ca9cd;
+  color: #fff;
+}
+li[data-type="control_button"] button.jf-form-buttons.form-pagebreak-back {
+  background-image: none;
+  background-color: #1ca9cd;
+  box-shadow: none;
+  text-shadow: none;
+}
+li[data-type="control_button"] button.jf-form-buttons.form-pagebreak-back:hover {
+  background-color: #1684a0;
+  color: #fff;
+}
+.form-all .form-pagebreak-back,
+.form-all .form-pagebreak-next {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+.form-all .form-pagebreak-back,
+.form-all .form-pagebreak-next {
+  min-width: 128px;
+}
+li[data-type="control_image"] div {
+  text-align: left;
+}
+li[data-type="control_image"] img {
+  border: none;
+  border-width: 0px !important;
+  border-style: solid !important;
+  border-color: false !important;
+}
+.supernova {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  background-repeat: repeat;
+}
+.supernova {
+  background-image: none;
+}
+#stage {
+  background-image: none;
+}
+/* | */
+.form-all {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  background-repeat: repeat;
+}
+.form-header-group {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+}
+.header-large h1.form-header {
+  font-size: 2em;
+}
+.header-large h2.form-header {
+  font-size: 1.5em;
+}
+.header-large h3.form-header {
+  font-size: 1.17em;
+}
+.header-large h1 + .form-subHeader {
+  font-size: 1em;
+}
+.header-large h2 + .form-subHeader {
+  font-size: .875em;
+}
+.header-large h3 + .form-subHeader {
+  font-size: .75em;
+}
+.header-default h1.form-header {
+  font-size: 2em;
+}
+.header-default h2.form-header {
+  font-size: 1.5em;
+}
+.header-default h3.form-header {
+  font-size: 1.17em;
+}
+.header-default h1 + .form-subHeader {
+  font-size: 1em;
+}
+.header-default h2 + .form-subHeader {
+  font-size: .875em;
+}
+.header-default h3 + .form-subHeader {
+  font-size: .75em;
+}
+.header-small h1.form-header {
+  font-size: 2em;
+}
+.header-small h2.form-header {
+  font-size: 1.5em;
+}
+.header-small h3.form-header {
+  font-size: 1.17em;
+}
+.header-small h1 + .form-subHeader {
+  font-size: 1em;
+}
+.header-small h2 + .form-subHeader {
+  font-size: .875em;
+}
+.header-small h3 + .form-subHeader {
+  font-size: .75em;
+}
+.form-header-group {
+  text-align: left;
+}
+.form-header-group {
+  font-family: "false", sans-serif;
+}
+div.form-header-group.header-large,
+div.form-header-group.hasImage {
+  margin: 0px -38px;
+}
+div.form-header-group.header-large,
+div.form-header-group.hasImage {
+  padding: 40px 52px;
+}
+.form-header-group .form-header,
+.form-header-group .form-subHeader {
+  color: -1;
+}
+.form-line-error {
+  overflow: hidden;
+  -webkit-transition-property: none;
+  -moz-transition-property: none;
+  -ms-transition-property: none;
+  -o-transition-property: none;
+  transition-property: none;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  background-color: #fff4f4;
+}
+.form-line-error .form-error-message {
+  background-color: #f23a3c;
+  clear: both;
+  float: none;
+}
+.form-line-error .form-error-message .form-error-arrow {
+  border-bottom-color: #f23a3c;
+}
+.form-line-error input:not(#coupon-input),
+.form-line-error textarea,
+.form-line-error .form-validation-error {
+  border: 1px solid #f23a3c;
+  box-shadow: 0 0 3px #f23a3c;
+}
+.form-line-error {
+  overflow: hidden;
+  -webkit-transition-property: none;
+  -moz-transition-property: none;
+  -ms-transition-property: none;
+  -o-transition-property: none;
+  transition-property: none;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  background-color: #fff4f4;
+}
+.form-line-active {
+  background-color: #f1f5ff;
+}
+/* 29 - FORM COLUMNS */
+
+
+/*PREFERENCES STYLE*/
+    .form-all {
+      font-family: Inter, sans-serif;
+    }
+  
+    .form-label.form-label-auto {
+      
+    display: block;
+    float: none;
+    text-align: left;
+    width: 100%;
+  
+    }
+  
+    .form-line {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  
+    .form-all {
+      max-width: 752px;
+      width: 100%;
+    }
+  
+    .form-label.form-label-left,
+    .form-label.form-label-right,
+    .form-label.form-label-left.form-label-auto,
+    .form-label.form-label-right.form-label-auto {
+      width: 230px;
+    }
+  
+    .form-all {
+      font-size: 16px
+    }
+  
+    .supernova .form-all, .form-all {
+      background-color: rgba(255,255,255,0);
+    }
+  
+    .form-all {
+      color: #2C3345;
+    }
+    .form-header-group .form-header {
+      color: #2C3345;
+    }
+    .form-header-group .form-subHeader {
+      color: #2C3345;
+    }
+    .form-label-top,
+    .form-label-left,
+    .form-label-right,
+    .form-html,
+    .form-checkbox-item label,
+    .form-radio-item label,
+    span.FITB .qb-checkbox-label,
+    span.FITB .qb-radiobox-label,
+    span.FITB .form-radio label,
+    span.FITB .form-checkbox label,
+    [data-blotid][data-type=checkbox] [data-labelid],
+    [data-blotid][data-type=radiobox] [data-labelid],
+    span.FITB-inptCont[data-type=checkbox] label,
+    span.FITB-inptCont[data-type=radiobox] label {
+      color: #2C3345;
+    }
+    .form-sub-label {
+      color: #464d5f;
+    }
+  
+  .supernova {
+    background-color: #ffffff;
+  }
+  .supernova body {
+    background: transparent;
+  }
+  
+    .form-textbox,
+    .form-textarea,
+    .form-dropdown,
+    .form-radio-other-input,
+    .form-checkbox-other-input,
+    .form-captcha input,
+    .form-spinner input {
+      background-color: #ffffff;
+    }
+  
+    .supernova {
+      background-image: none;
+    }
+    #stage {
+      background-image: none;
+    };
+  
+    .form-all {
+      background-image: none;
+    }
+  .form-all:before { content: none; } .form-all { margin-top: 72px; }/*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
+
+    /* Injected CSS Code */
+</style>
+
+</head>
+<body>
+    <form class="jotform-form" action="https://eu-submit.jotform.com/submit/232091540369051" method="post" enctype="multipart/form-data" name="form_232091540369051" id="232091540369051" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="232091540369051" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" />
+      <div role="main" class="form-all">
+        <link type="text/css" rel="stylesheet" media="all" href="https://cdn.jotfor.ms/wizards/languageWizard/custom-dropdown/css/lang-dd.css?3.3.43812" />
+        <div class="cont"><input type="text" id="input_language" name="input_language" style="display:none" />
+          <div class="language-dd" id="langDd" style="display:none">
+            <div class="dd-placeholder lang-emp">Language</div>
+            <ul class="lang-list dn" id="langList">
+              <li data-lang="lv" class="lv">Latvian</li>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdn.jotfor.ms/js/formTranslation.v2.js?3.3.43812"></script>
+        <ul class="form-section page-section">
+          <li class="form-line" data-type="control_widget" id="id_8">
+            <div id="cid_8" class="form-input" data-layout="full">
+              <div style="width:100%;text-align:Center" data-component="widget-directEmbed">
+                <div class="direct-embed-widgets progress-bar-widget widget-static" data-type="direct-embed" style="width:1px;min-height:1px">
+                  <div class="direct-embed-8">
+                    <script type="text/javascript">
+                      var progressBarqid = "8";
+                      var onlyCountReq = "Yes";
+                      var fixedProgressBar = "No";
+                      var deleteLabelProgressBar = "E-pasts";
+                      var fieldsProgressBar = "Soļi";
+                      var submitProgressBar = "Droši nosūtiet vēstules";
+                      var requiredProgressBar = "Obligātie lauciņi";
+                      var barColor = "#5040de";
+                      var theme = "Island Blue";
+                    </script>
+                    <link href="//widgets.jotform.io/progressBar/min/styles.min.css" rel="stylesheet" media="screen" />
+                    <script src="//widgets.jotform.io/progressBar/min/scripts.min.js"></script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="form-line" data-type="control_fullname" id="id_25"><label class="form-label form-label-top form-label-auto" id="label_25" for="first_25"> Iesniedzējs </label>
+            <div id="cid_25" class="form-input-wide" data-layout="full">
+              <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_25" name="q25_iesniedzejs[first]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_25 given-name" size="10" value="" data-component="first" aria-labelledby="label_25 sublabel_25_first" /><label class="form-sub-label" for="first_25" id="sublabel_25_first" style="min-height:13px" aria-hidden="false">Vārds</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_25" name="q25_iesniedzejs[last]" class="form-textbox" data-defaultvalue="" autoComplete="section-input_25 family-name" size="15" value="" data-component="last" aria-labelledby="label_25 sublabel_25_last" /><label class="form-sub-label" for="last_25" id="sublabel_25_last" style="min-height:13px" aria-hidden="false">Uzvārds</label></span></div>
+            </div>
+          </li>
+          <li class="form-line fixed-width jf-required" data-type="control_dropdown" id="id_4"><label class="form-label form-label-top form-label-auto" id="label_4" for="input_4"> Latvijas Pasta sūtījumu veids<span class="form-required">*</span> </label>
+            <div id="cid_4" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><select class="form-dropdown validate[required]" id="input_4" name="q4_latvijasPasta" style="width:360px" data-component="dropdown" required="" aria-label="Latvijas Pasta sūtījumu veids">
+                  <option value="">Please Select</option>
+                  <option selected="" value="Vienkārša">Vienkārša</option>
+                  <option value="Ierakstīta">Ierakstīta</option>
+                  <option value="Apdrošināta">Apdrošināta</option>
+                  <option value="Izsekojama">Izsekojama</option>
+                </select><label class="form-sub-label" for="input_4" id="sublabel_input_4" style="min-height:13px" aria-hidden="false">Vēstuļu korespondence (dokumenti) līdz 2 kg.</label></span> </div>
+          </li>
+          <li class="form-line jf-required" data-type="control_radio" id="id_24"><label class="form-label form-label-top form-label-auto" id="label_24" for="input_24"> Dokumentu drukas krāsa<span class="form-required">*</span> </label>
+            <div id="cid_24" class="form-input-wide jf-required" data-layout="full">
+              <div class="form-single-column" role="group" aria-labelledby="label_24" data-component="radio"><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_24" class="form-radio validate[required]" id="input_24_0" name="q24_typeA24" checked="" value="MELNBALTS" required="" /><label id="label_input_24_0" for="input_24_0">MELNBALTS</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_24" class="form-radio validate[required]" id="input_24_1" name="q24_typeA24" value="KRĀSAINS" required="" /><label id="label_input_24_1" for="input_24_1">KRĀSAINS</label></span></div>
+            </div>
+          </li>
+          <li class="form-line fixed-width jf-required" data-type="control_dropdown" id="id_9"><label class="form-label form-label-top form-label-auto" id="label_9" for="input_9"> Aploksnes veids<span class="form-required">*</span> </label>
+            <div id="cid_9" class="form-input-wide jf-required" data-layout="half"> <select class="form-dropdown validate[required]" id="input_9" name="q9_aploksnesVeids" style="width:453px" data-component="dropdown" required="" aria-label="Aploksnes veids">
+                <option value="">Please Select</option>
+                <option selected="" value="Aploksne ar lodziņu C65 (114x229mm vai 1/3 no A4)">Aploksne ar lodziņu C65 (114x229mm vai 1/3 no A4)</option>
+                <option value="Aploksne ar lodziņu C5 (162x229mm vai A5 izmērs)">Aploksne ar lodziņu C5 (162x229mm vai A5 izmērs)</option>
+              </select> </div>
+          </li>
+          <li class="form-line jf-required" data-type="control_widget" id="id_15"><label class="form-label form-label-top form-label-auto" id="label_15" for="input_15"> Adreses, paziņojumu un svētku klišejas<span class="form-required">*</span> </label>
+            <div id="cid_15" class="form-input-wide jf-required" data-layout="full">
+              <div data-widget-name="Image Picker" style="width:100%;text-align:Center;overflow-x:auto" data-component="widget-field"><iframe data-client-id="52a02b574b41f8114a000004" title="Image Picker" frameBorder="0" scrolling="no" allowtransparency="true" allow="geolocation; microphone; camera; autoplay; encrypted-media; fullscreen" data-type="iframe" class="custom-field-frame" id="customFieldFrame_15" src="" style="max-width:600px;border:none;width:100%;height:100px" data-width="600" data-height="100"></iframe>
+                <div class="widget-inputs-wrapper"><input type="hidden" id="input_15" class="form-hidden form-widget widget-required " name="q15_typeA15" value="" /><input type="hidden" id="widget_settings_15" class="form-hidden form-widget-settings" value="%5B%7B%22name%22%3A%22items%22%2C%22value%22%3A%22%7C%5CnADRESE%7Chttps%3A%2F%2Fwww.jotform.com%2Fuploads%2Fameksh%2Fform_files%2F4.64c4f4fe5c2083.85493358.png%5CnINFO%2520T%25C4%2580LRUNIS%7Chttps%3A%2F%2Fwww.jotform.com%2Fuploads%2Fameksh%2Fform_files%2F9.64c4f518481d98.31406583.png%5CnVALSTS%2520SV%25C4%2592TKI%7Chttps%3A%2F%2Fwww.jotform.com%2Fuploads%2Fameksh%2Fform_files%2F6.64c4f543abd457.15840758.png%5CnLIELDIENAS%7Chttps%3A%2F%2Fwww.jotform.com%2Fuploads%2Fameksh%2Fform_files%2F7.64c4f552ee3f35.41546195.png%5CnL%25C4%25AAGO%7Chttps%3A%2F%2Fwww.jotform.com%2Fuploads%2Fameksh%2Fform_files%2F5.64c4f5675c5872.32293171.png%5CnZIEMASSV%25C4%2592TKI%7Chttps%3A%2F%2Fwww.jotform.com%2Fuploads%2Fameksh%2Fform_files%2F8.64c4f57ca21464.32543646.png%22%7D%2C%7B%22name%22%3A%22fixedSize%22%2C%22value%22%3A%22150x75%22%7D%2C%7B%22name%22%3A%22limit%22%2C%22value%22%3A%222%22%7D%2C%7B%22name%22%3A%22select%22%2C%22value%22%3A%22Border%22%7D%5D" data-version="2" /></div>
+                <script type="text/javascript">
+                  setTimeout(function()
+                  {
+                    var _cFieldFrame = document.getElementById("customFieldFrame_15");
+                    if (_cFieldFrame)
+                    {
+                      _cFieldFrame.onload = function()
+                      {
+                        if (typeof widgetFrameLoaded !== 'undefined')
+                        {
+                          widgetFrameLoaded(15,
+                          {
+                            "formID": 232091540369051
+                          })
+                        }
+                      };
+                      _cFieldFrame.src = "//widgets.jotform.io/imagePicker/?qid=15&ref=" +
+                        encodeURIComponent(window.location.protocol + "//" + window.location.host) + '' + '' + '' +
+                        '&injectCSS=' + encodeURIComponent(window.location.search.indexOf("ndt=1") > -1);
+                      _cFieldFrame.addClassName("custom-field-frame-rendered");
+                    }
+                  }, 0);
+                </script>
+              </div>
+            </div>
+          </li>
+          <li class="form-line" data-type="control_textarea" id="id_16"><label class="form-label form-label-top form-label-auto" id="label_16" for="input_16"> Papildus norādījumi vai komentāri operātoram: </label>
+            <div id="cid_16" class="form-input-wide" data-layout="full"> <textarea id="input_16" class="form-textarea" name="q16_papildusNoradijumi" style="width:648px;height:99px" data-component="textarea" aria-labelledby="label_16"></textarea> </div>
+          </li>
+          <li class="form-line jf-required" data-type="control_fileupload" id="id_5"><label class="form-label form-label-top form-label-auto" id="label_5" for="input_5"> Lūdzu, pievienojiet dokumentus (PDF, ZIP, RAR)<span class="form-required">*</span> </label>
+            <div id="cid_5" class="form-input-wide jf-required" data-layout="full">
+              <div class="jfQuestion-fields" data-wrapper-react="true">
+                <div class="jfField isFilled">
+                  <div class="jfUpload-wrapper">
+                    <div class="jfUpload-container">
+                      <div class="jfUpload-button-container">
+                        <div class="jfUpload-button" aria-hidden="true" tabindex="0" style="display:none" data-version="v2">Pievienot failus<div class="jfUpload-heading forDesktop">Drag and drop files here</div>
+                          <div class="jfUpload-heading forMobile">Choose a file</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="jfUpload-files-container">
+                      <div class="validate[multipleUpload]"><input type="file" id="input_5" name="q5_ludzuPievienojiet[]" multiple="" class="form-upload-multiple validate[required]" data-imagevalidate="yes" data-file-accept="pdf, zip, rar" data-limit-file-size="No" data-file-maxsize="10857" data-file-minsize="0" data-file-limit="" data-component="fileupload" required="" aria-label="Pievienot failus" /></div>
+                    </div>
+                  </div><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_5" id="sublabel_input_5" style="min-height:13px" aria-hidden="false">Liela skaita failu pievienošana var izraisīt Jūsu datora &quot;uzkāršanos&quot;. Ja tas notiek, lūdzu uzgaidiet, kamēr faili tiks apstrādāti un iesniegti. Lai izvairītos no datora pārslogošanas, aicinām dokumentus iesniegt ZIP vai RAR arhīva veidā.</label></span>
+                </div><span style="display:none" class="cancelText">Cancel</span><span style="display:none" class="ofText">of</span>
+              </div>
+            </div>
+          </li>
+          <li class="form-line" data-type="control_widget" id="id_26">
+            <div id="cid_26" class="form-input" data-layout="full">
+              <div style="width:100%;text-align:Center" data-component="widget-directEmbed">
+                <div class="direct-embed-widgets review-before-submit-widget widget-static" data-type="direct-embed" style="width:1px;min-height:1px">
+                  <script>
+                    var buttonName = 'Pārskats';
+                    var backButtonText = "Atgriezties";
+                    var showEmptyInputs = 'Yes';
+                    var showTitle = 'Yes';
+                    var showCollapsible = 'Yes';
+                    var deleteId = 'Label 1';
+                    var enablePrint = 'Yes' || "Yes";
+                    var printButtonLabel = 'Drukāt' || "Print";
+                  </script>
+                  <link href="//widgets.jotform.io/checkInput/min/styles.min.css" rel="stylesheet">
+                  <script src="//widgets.jotform.io/checkInput/min/scripts.min.js"></script>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="form-line" data-type="control_button" id="id_19">
+            <div id="cid_19" class="form-input-wide" data-layout="full">
+              <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><button id="input_19" type="submit" class="form-submit-button form-submit-button-red-300 submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Nosūtīt pastu</button></div>
+            </div>
+          </li>
+          <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
+        </ul>
+      </div>
+      <script>
+        JotForm.showJotFormPowered = "0";
+      </script>
+      <script>
+        JotForm.poweredByText = "Powered by Jotform";
+      </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="232091540369051" />
+      <script type="text/javascript">
+        var all_spc = document.querySelectorAll("form[id='232091540369051'] .si" + "mple" + "_spc");
+        for (var i = 0; i < all_spc.length; i++)
+        {
+          all_spc[i].value = "232091540369051-232091540369051";
+        }
+      </script>
+    </form><script type="text/javascript">JotForm.ownerView=true;</script><script type="text/javascript">JotForm.forwardToEu=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.43812"></script>
+    <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.43812"></script>
+    <script type="text/javascript">JotForm.isNewSACL=true;</script>
+</body>
+</html>
